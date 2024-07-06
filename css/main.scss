@@ -1,0 +1,86 @@
+@import 'scss/base/fonts' ;
+@import 'scss/abstracts/variables';
+@import 'scss/layout/testimonial' ;
+@import 'scss/base/base' ;
+
+
+//boxes
+.testimonial{
+    background-color: $Light-grayish-blue;
+    width: 100%;
+    min-height: 100vh;
+
+    @mixin box{
+        border-radius: 5px;
+        padding: 20px;
+        .header{
+            display: flex;
+            justify-content: flex-start;
+            align-items: center;
+            gap: 10px;
+            padding-bottom: 20px;
+            img{
+                border-radius: 50%;
+            }
+            .title{
+                h5{
+                    color: $White;
+                    font-size: 20px;
+                    font-weight: bold;
+                    padding-bottom: 5x;
+                    &+p{
+                       color: $Light-gray 
+                    }
+                }
+                
+            }
+        }
+        .content{
+               p:first-child{
+                   font-size: 20px;
+                   padding-bottom: 20px;
+                   font-weight: 600;
+                   color: $White;
+               }
+               p:last-child{
+                line-height: 1.5;
+                color: $Light-gray;
+               }
+           }
+    }
+
+    @for $i from 1 through 5{
+        .box-#{$i}{
+            @include box();
+        }
+    }
+    .box-1{
+        position: relative;
+        background-color: $Moderate-violet;
+        &::before{
+            position: absolute;
+            content: '';
+            background-image: url(../images/bg-pattern-quotation.svg);
+            top: 0;
+            right: 50px;
+            width: 104px;
+            height: 102px;
+
+        }
+    }
+    .box-2{
+        background-color: $Very-dark-grayish-blue;
+    }
+    .box-3, .box-5{
+        background-color: $White;
+        h5, p:first-child{
+            color: black !important;
+        }
+    }
+    .box-4{
+        background-color: $Very-dark-blackish-blue;
+    }
+    
+}
+
+

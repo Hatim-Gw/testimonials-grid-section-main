@@ -1,0 +1,33 @@
+@media (min-width: $mobile) { 
+    .container{
+        padding:20px 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+ }
+
+@media (min-width: $desktop) {
+    .container{
+        // show it in the middle of page
+        position: absolute;
+        content: '';
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        //display it as grid
+        display: grid;
+        grid-template-columns: 300px 300px 300px 300px;
+        gap: 20px;
+    }
+    .box-1{
+        grid-column:1/3;
+    }
+    .box-4{
+        grid-column: 2/4;
+    }
+    .box-5{
+        grid-column: 4;
+        grid-row: 1/3;
+    }
+ }
